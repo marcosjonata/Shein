@@ -125,9 +125,7 @@
           
           
           
-          
 
-         
          
          
          
@@ -200,26 +198,6 @@
         
         
 
-        
-        
-
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         
         
         
@@ -348,33 +326,66 @@ function closeModal(id) {
         <div class="main">
             
                 <div class="card">
-                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106.jpg" alt="Shorts Jeans Rasgado">
+                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
                     <h2>Shorts Jeans Rasgado</h2>
                     <p>R$49,90</p>
                     <button onclick="openModal('modal1')">Avaliar</button>
                 </div>
 
                 <div class="card">
-                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106.jpg" alt="Blusa Cropped Floral">
+                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106" alt="Blusa Cropped Floral">
                     <h2>Blusa Cropped Floral</h2>
                     <p>R$29,90</p>
                     <button onclick="openModal('modal2')">Avaliar</button>
                 </div>
 
                 <div class="card">
-                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106.jpg" alt="Vestido Midi Estampado">
+                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106" alt="Vestido Midi Estampado">
                     <h2>Vestido Midi Estampado</h2>
                     <p>R$69,90</p>
                     <button onclick="openModal('modal3')">Avaliar</button>
                 </div>
 
                 <div class="card">
-                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106.jpg" alt="Saia Plissada Xadrez">
+                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106" alt="Saia Plissada Xadrez">
                     <h2>Saia Plissada Xadrez</h2>
                     <p>R$59,90</p>
                     <button onclick="openModal('modal4')">Avaliar</button>
                 </div>
 
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/jumpsuit/210419-jumpsuit-1618919106.jpg" alt="Macacão Listrado com Cinto">
-                    <h2>Macacão Listrado com Cinto</h2>
+                
+            
+        </div>
+        
+    </div>
+
+    <!-- Modal de avaliação para a primeira roupa -->
+    <div id="modal1" class="modal">
+        <!-- Botão para fechar o modal -->
+        <span class="modal-close" onclick="closeModal('modal1')">×</span>
+
+        <!-- Conteúdo do modal -->
+        <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
+        <h2>Shorts Jeans Rasgado</h2>
+        <p>R$49,90</p>
+
+        <!-- Avaliação com estrelas -->
+        <p>Avalie este produto:</p>
+        <span id="star1" onclick="rate(1)"></span>
+        <span id="star2" onclick="rate(2)"></span>
+        <span id="star3" onclick="rate(3)"></span>
+        <span id="star4" onclick="rate(4)"></span>
+        <span id="star5" onclick="rate(5)"></span>
+
+        <!-- Comentário sobre o produto -->
+        <p>Deixe seu comentário:</p>
+        <textarea id="comment1" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
+
+        <!-- Botão para enviar a avaliação -->
+        <button id="submit1" onclick="submit(1)">Enviar</button>
+
+    </div>
+
+    <!-- Modal de avaliação para a segunda roupa -->
+    <div id="modal2" class="modal">
+        <!--
