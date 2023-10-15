@@ -1,108 +1,142 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shein Avaliações</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
 
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         .header {
-            background-color: #f1f1f1;
-            padding: 10px;
+            background-color: #f0f0f0;
+            padding: 20px;
             text-align: center;
         }
 
-        .logo {
-            max-width: 100px;
+        .header h1 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 36px;
         }
 
-        .container {
-            max-width: 600px;
-            margin: 0 auto;
+        .main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .card {
+            width: 30%;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
         }
 
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
+        .card img {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            box-sizing: border-box;
+            height: auto;
         }
 
-        .login-form button,
-        .evaluation-form button {
+        .card h2 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            margin-top: 10px;
+        }
+
+        .card p {
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .card button {
+            display: block;
             width: 100%;
-            padding: 10px;
-            background-color: #4caf50;
-            color: white;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
             border: none;
-            cursor: pointer;
-        }
-
-        .evaluation-form {
-            display: none;
-        }
-
-        .evaluation-form textarea {
-            width: 100%;
-            height: 100px;
+            border-radius: 10px;
             padding: 10px;
-            margin: 10px 0;
-            box-sizing: border-box;
+            margin-top: 10px;
+        }
+
+        .card button:hover {
+            background-color: #444;
+        }
+
+        .footer {
+            background-color: #f0f0f0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .footer p {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
         }
     </style>
 </head>
-
 <body>
-    <div class="header">
-        <img class="logo" src="IMG_2208.jpeg" alt="Logo da Shein">
-    </div>
     <div class="container">
-        <div class="login-form">
-            <h2>Login</h2>
-            <label for="username">Nome de usuário:</label>
-            <input type="text" id="username" name="username" required><br>
-
-            <label for="password">Senha:</label>
-            <input type="password" id="password" name="password" required><br>
-
-            <button onclick="checkLogin()">Entrar</button>
+        <div class="header">
+            <h1>Avaliações da Shein</h1>
         </div>
+        <div class="main">
+            
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106.jpg" alt="Shorts Jeans Rasgado">
+                    <h2>Shorts Jeans Rasgado</h2>
+                    <p>R$49,90</p>
+                    <button>Avaliar</button>
+                </div>
 
-        <div class="evaluation-form">
-            <h2>Avaliação</h2>
-            <textarea id="evaluation" name="evaluation" required></textarea><br>
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106.jpg" alt="Blusa Cropped Floral">
+                    <h2>Blusa Cropped Floral</h2>
+                    <p>R$29,90</p>
+                    <button>Avaliar</button>
+                </div>
 
-            <button onclick="submitEvaluation()">Enviar Avaliação</button>
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106.jpg" alt="Vestido Midi Estampado">
+                    <h2>Vestido Midi Estampado</h2>
+                    <p>R$69,90</p>
+                    <button>Avaliar</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106.jpg" alt="Saia Plissada Xadrez">
+                    <h2>Saia Plissada Xadrez</h2>
+                    <p>R$59,90</p>
+                    <button>Avaliar</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/jumpsuit/210419-jumpsuit-1618919106.jpg" alt="Macacão Listrado com Cinto">
+                    <h2>Macacão Listrado com Cinto</h2>
+                    <p>R$89,90</p>
+                    <button>Avaliar</button>
+                </div>
+            
+        </div>
+        <div class="footer">
+            <p>Saldo: R$0,00</p>
         </div>
     </div>
-
-    <script>
-        function checkLogin() {
-            const username = document.getElementById("username").value;
-            const password = document.getElementById("password").value;
-
-            // Verifica se o nome de usuário e a senha correspondem
-            if (username === "marcos247" && password === "123456") {
-                // Exibindo a parte das avaliações após o login bem-sucedido
-                document.querySelector('.login-form').style.display = 'none';
-                document.querySelector('.evaluation-form').style.display = 'block';
-            } else {
-                alert("Login inválido. Por favor, tente novamente.");
-            }
-        }
-
-        function submitEvaluation() {
-            // Implemente a lógica para enviar a avaliação ao servidor
-        }
-    </script>
 </body>
-
 </html>
