@@ -36,7 +36,8 @@
             box-sizing: border-box;
         }
 
-        .login-form button {
+        .login-form button,
+        .evaluation-form button {
             width: 100%;
             padding: 10px;
             background-color: #4caf50;
@@ -85,13 +86,11 @@
 
     <script>
         function checkLogin() {
-            // Implemente a lógica de verificação do login aqui
-            // Se o login for bem-sucedido, exiba a parte das avaliações
             const username = document.getElementById("username").value;
             const password = document.getElementById("password").value;
 
-            // Exemplo de lógica de verificação de login (substitua com sua lógica real)
-            if (username === "usuario" && password === "senha") {
+            // Verifica se o nome de usuário e a senha correspondem
+            if (username === "marcos247" && password === "123456") {
                 // Exibindo a parte das avaliações após o login bem-sucedido
                 document.querySelector('.login-form').style.display = 'none';
                 document.querySelector('.evaluation-form').style.display = 'block';
