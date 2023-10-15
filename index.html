@@ -8,6 +8,18 @@
     <style>
         body {
             font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100px;
         }
 
         .container {
@@ -33,34 +45,63 @@
             cursor: pointer;
         }
 
-        .user-balance {
-            margin-top: 20px;
+        .evaluation-form {
+            display: none;
+        }
+
+        .evaluation-form textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
         }
     </style>
 </head>
 
 <body>
+    <div class="header">
+        <img class="logo" src="IMG_2208.jpeg" alt="Logo da Shein">
+    </div>
     <div class="container">
-        <h1><img src="IMG_2208.jpeg" alt="Logo do Site"> Shein Avaliações</h1>
         <div class="login-form">
+            <h2>Login</h2>
             <label for="username">Nome de usuário:</label>
             <input type="text" id="username" name="username" required><br>
 
             <label for="password">Senha:</label>
             <input type="password" id="password" name="password" required><br>
 
-            <button onclick="login()">Entrar</button>
+            <button onclick="checkLogin()">Entrar</button>
         </div>
 
-        <div class="user-balance">
-            <h2>Saldo do Usuário:</h2>
-            <p id="user-balance">R$ 0,00</p>
+        <div class="evaluation-form">
+            <h2>Avaliação</h2>
+            <textarea id="evaluation" name="evaluation" required></textarea><br>
+
+            <button onclick="submitEvaluation()">Enviar Avaliação</button>
         </div>
     </div>
 
     <script>
-        function login() {
-            // Lógica de login aqui
+        function checkLogin() {
+            // Implemente a lógica de verificação do login aqui
+            // Se o login for bem-sucedido, exiba a parte das avaliações
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+
+            // Exemplo de lógica de verificação de login (substitua com sua lógica real)
+            if (username === "usuario" && password === "senha") {
+                // Exibindo a parte das avaliações após o login bem-sucedido
+                document.querySelector('.login-form').style.display = 'none';
+                document.querySelector('.evaluation-form').style.display = 'block';
+            } else {
+                alert("Login inválido. Por favor, tente novamente.");
+            }
+        }
+
+        function submitEvaluation() {
+            // Implemente a lógica para enviar a avaliação ao servidor
         }
     </script>
 </body>
