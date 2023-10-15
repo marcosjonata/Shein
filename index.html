@@ -48,7 +48,6 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
-            margin-top: 20px;
         }
 
         .card img {
@@ -91,20 +90,22 @@
         .modal {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
             background-color: #f0f0f0;
             z-index: 1;
             overflow: auto;
             padding: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
         }
 
         .modal img {
-            width: 100%;
+            width: auto;
             height: auto;
             max-width: 100%;
+            margin: 0 auto;
+            display: block;
         }
 
         .modal h2 {
@@ -197,7 +198,103 @@
 </head>
 <body>
     <div class="container">
-        <!-- Seu conteúdo HTML aqui -->
+        <div class="header">
+            <h1>Looks Shein</h1>
+            <p>Saldo: R$0,00</p>
+        </div>
+        <div class="main">
+            
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
+                    <h2>Shorts Jeans Rasgado</h2>
+                    <p>R$49,90</p>
+                    <button onclick="openModal('modal1')">Avaliar</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106" alt="Blusa Cropped Floral">
+                    <h2>Blusa Cropped Floral</h2>
+                    <p>R$29,90</p>
+                    <button onclick="openModal('modal2')">Avaliar</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106" alt="Vestido Midi Estampado">
+                    <h2>Vestido Midi Estampado</h2>
+                    <p>R$69,90</p>
+                    <button onclick="openModal('modal3')">Avaliar</button>
+                </div>
+
+                <div class="card">
+                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106" alt="Saia Plissada Xadrez">
+                    <h2>Saia Plissada Xadrez</h2>
+                    <p>R$59,90</p>
+                    <button onclick="openModal('modal4')">Avaliar</button>
+                </div>
+        </div>
     </div>
+
+    <!-- Modal de avaliação para a primeira roupa -->
+    <div id="modal1" class="modal">
+        <!-- Botão para fechar o modal -->
+        
+    <!-- Conteúdo do modal -->
+    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
+    <h2>Shorts Jeans Rasgado</h2>
+    <p>R$49,90</p>
+
+    <!-- Avaliação com estrelas -->
+    <p>Avalie este produto:</p>
+    <span class="star" onclick="rate(1)"></span>
+    <span class="star" onclick="rate(2)"></span>
+    <span class="star" onclick="rate(3)"></span>
+    <span class="star" onclick="rate(4)"></span>
+    <span class="star" onclick="rate(5)"></span>
+
+    <!-- Comentário sobre o produto -->
+    <p>Deixe seu comentário:</p>
+    <textarea id="comment1" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
+
+    <!-- Botão para enviar a avaliação -->
+    <button id="submit1" onclick="submit(1)">Enviar</button>
+</div>
+
+<!-- Modal de avaliação para a segunda roupa -->
+<div id="modal2" class="modal">
+    <!-- Botão para fechar o modal -->
+    <span class="modal-close" onclick="closeModal('modal2')">✖</span>
+
+    <!-- Conteúdo do modal -->
+    <img src="https://br.shein.com/pimages/top/210419-top-1618919106.jpg" alt="Blusa Cropped Floral">
+    <h2>Blusa Cropped Floral</h2>
+    <p>R$29,90</p>
+
+    <!-- Avaliação com estrelas -->
+    <p>Avalie este produto:</p>
+    <span class="star" onclick="rate(1)"></span>
+    <span class="star" onclick="rate(2)"></span>
+    <span class="star" onclick="rate(3)"></span>
+    <span class="star" onclick="rate(4)"></span>
+    <span class="star" onclick="rate(5)"></span>
+
+    <!-- Comentário sobre o produto -->
+    <p>Deixe seu comentário:</p>
+    <textarea id="comment2" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
+
+    <!-- Botão para enviar a avaliação -->
+    <button id="submit2" onclick="submit(2)">Enviar</button>
+</div>
+
+<script>
+    // Funções JavaScript para avaliação
+    function rate(stars) {
+        // Lógica para avaliação
+    }
+
+    function submit(modalId) {
+        // Lógica para enviar a avaliação
+    }
+</script>
+
 </body>
 </html>
