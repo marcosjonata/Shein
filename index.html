@@ -1,1 +1,68 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" href="logo.png"><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"><meta name="theme-color" content="#000000"><meta name="description" content="Web site created using create-react-app"><link rel="apple-touch-icon" href="logo.png"><link rel="manifest" href="manifest.json"><script src="https://www.googletagmanager.com/gtag/js?id=UA-267444633-1"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-267444633-1")</script><title>Looks Shein</title><script defer="defer" src="main.d736dec6.js"></script><link href="main.e1d4a9d5.css" rel="stylesheet"></head><body><noscript>You need to enable JavaScript to run this app.</noscript><div id="root"></div></body></html>
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shein Avaliações</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .user-balance {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><img src="IMG_2208.jpeg" alt="Logo do Site"> Shein Avaliações</h1>
+        <div class="login-form">
+            <label for="username">Nome de usuário:</label>
+            <input type="text" id="username" name="username" required><br>
+
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required><br>
+
+            <button onclick="login()">Entrar</button>
+        </div>
+
+        <div class="user-balance">
+            <h2>Saldo do Usuário:</h2>
+            <p id="user-balance">R$ 0,00</p>
+        </div>
+    </div>
+
+    <script>
+        function login() {
+            // Lógica de login aqui
+        }
+    </script>
+</body>
+
+</html>
