@@ -16,13 +16,21 @@
         .header {
             background-color: #f0f0f0;
             padding: 20px;
-            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .header h1 {
             color: #333;
             font-family: Arial, sans-serif;
             font-size: 36px;
+        }
+
+        .header p {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
         }
 
         .main {
@@ -78,23 +86,264 @@
             background-color: #444;
         }
 
-        .footer {
-            background-color: #f0f0f0;
-            padding: 20px;
-            text-align: center;
-        }
+        .modal {
+          display:none; 
+          position:absolute; 
+          top:-100%; 
+          left:-100%; 
+          right:-100%; 
+          bottom:-100%; 
+          background-color:#f0f0f0; 
+          z-index:+1; 
+          overflow:auto; 
+          padding-top:-50%;
+          padding-left:-50%;
+          padding-right:-50%;
+          padding-bottom:-50%;
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
 
-        .footer p {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-        }
-    </style>
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         }
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
+        
+        
+        
+
+Some additional sentences are
+
+.modal img {
+    width:auto; 
+    height:auto; 
+    max-width:auto; 
+    max-height:auto; 
+    margin-left:auto; 
+    margin-right:auto; 
+    display:block; 
+}
+
+.modal h2 {
+    color:#333; 
+    font-family:"Arial", sans-serif; 
+    font-size:"24px"; 
+    text-align:center; 
+}
+
+.modal p {
+    color:#666; 
+    font-family:"Arial", sans-serif; 
+    font-size:"16px"; 
+    text-align:center; 
+}
+
+.modal span {
+    display:inline-block; 
+    width:"20px"; 
+    height:"20px"; 
+    background-color:#ccc; 
+    border-radius:"50%"; 
+}
+
+.modal span.active {
+    background-color:#333; 
+}
+
+.modal textarea {
+    width:"80%"; 
+    height:"100px"; 
+    margin-left:"10%"; 
+    margin-right:"10%"; 
+    margin-top:"20px"; 
+    margin-bottom:"20px"; 
+}
+
+.modal button {
+    display:block; 
+    width:"40%"; 
+    height:"40px"; 
+    margin-left:"30%"; 
+    margin-right:"30%"; 
+    background-color:#333; 
+    color:#fff; 
+    font-family:"Arial", sans-serif; 
+    font-size:"18px"; 
+    border:none; 
+    border-radius:"10px"; 
+}
+
+.modal button:hover {
+    background-color:#444; 
+}
+
+.modal-close {
+    position:absolute; 
+    top:"10px"; 
+    right:"10px"; 
+    width:"30px"; 
+    height:"30px"; 
+    background-color:#333; 
+    color:#fff; 
+    font-family:"Arial", sans-serif; 
+    font-size:"24px"; 
+    text-align:center; 
+    line-height:"30px"; 
+    cursor:pointer; 
+}
+
+.modal-close:hover {
+    background-color:#444; 
+}
+
+<script>
+// Função para abrir o modal de avaliação
+function openModal(id) {
+  // Seleciona o elemento do modal pelo id
+  var modal = document.getElementById(id);
+  // Muda o estilo do modal para display:block
+  modal.style.display = "block";
+}
+
+// Função para fechar o modal de avaliação
+function closeModal(id) {
+  // Seleciona o elemento do modal pelo id
+  var modal = document.getElementById(id);
+  // Muda o estilo do modal para display:none
+  modal.style.display = "none";
+}
+</script>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>Avaliações da Shein</h1>
+            <h1>Looks Shein</h1>
+            <p>Saldo: R$0,00</p>
         </div>
         <div class="main">
             
@@ -102,41 +351,30 @@
                     <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106.jpg" alt="Shorts Jeans Rasgado">
                     <h2>Shorts Jeans Rasgado</h2>
                     <p>R$49,90</p>
-                    <button>Avaliar</button>
+                    <button onclick="openModal('modal1')">Avaliar</button>
                 </div>
 
                 <div class="card">
                     <img src="https://br.shein.com/pimages/top/210419-top-1618919106.jpg" alt="Blusa Cropped Floral">
                     <h2>Blusa Cropped Floral</h2>
                     <p>R$29,90</p>
-                    <button>Avaliar</button>
+                    <button onclick="openModal('modal2')">Avaliar</button>
                 </div>
 
                 <div class="card">
                     <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106.jpg" alt="Vestido Midi Estampado">
                     <h2>Vestido Midi Estampado</h2>
                     <p>R$69,90</p>
-                    <button>Avaliar</button>
+                    <button onclick="openModal('modal3')">Avaliar</button>
                 </div>
 
                 <div class="card">
                     <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106.jpg" alt="Saia Plissada Xadrez">
                     <h2>Saia Plissada Xadrez</h2>
                     <p>R$59,90</p>
-                    <button>Avaliar</button>
+                    <button onclick="openModal('modal4')">Avaliar</button>
                 </div>
 
                 <div class="card">
                     <img src="https://br.shein.com/pimages/jumpsuit/210419-jumpsuit-1618919106.jpg" alt="Macacão Listrado com Cinto">
                     <h2>Macacão Listrado com Cinto</h2>
-                    <p>R$89,90</p>
-                    <button>Avaliar</button>
-                </div>
-            
-        </div>
-        <div class="footer">
-            <p>Saldo: R$0,00</p>
-        </div>
-    </div>
-</body>
-</html>
