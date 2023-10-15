@@ -48,6 +48,7 @@
             border-radius: 10px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             padding: 20px;
+            margin-top: 20px;
         }
 
         .card img {
@@ -80,6 +81,7 @@
             border-radius: 10px;
             padding: 10px;
             margin-top: 10px;
+            cursor: pointer;
         }
 
         .card button:hover {
@@ -87,305 +89,115 @@
         }
 
         .modal {
-          display:none; 
-          position:absolute; 
-          top:-100%; 
-          left:-100%; 
-          right:-100%; 
-          bottom:-100%; 
-          background-color:#f0f0f0; 
-          z-index:+1; 
-          overflow:auto; 
-          padding-top:-50%;
-          padding-left:-50%;
-          padding-right:-50%;
-          padding-bottom:-50%;
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #f0f0f0;
+            z-index: 1;
+            overflow: auto;
+            padding: 50px;
+        }
 
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         
-         }
-        
-        
+        .modal img {
+            width: 100%;
+            height: auto;
+            max-width: 100%;
+        }
 
-        
-        
+        .modal h2 {
+            color: #333;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
 
-        
-        
+        .modal p {
+            color: #666;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+        }
 
-        
-        
+        .modal span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: #ccc;
+            border-radius: 50%;
+            margin: 0 5px;
+            cursor: pointer;
+        }
 
-        
-        
+        .modal span.active {
+            background-color: #333;
+        }
 
-        
-        
+        .modal textarea {
+            width: 80%;
+            height: 100px;
+            margin: 20px 10%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
 
-        
-        
+        .modal button {
+            width: 40%;
+            height: 40px;
+            margin: 20px 30%;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 18px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
 
-        
-        
+        .modal button:hover {
+            background-color: #444;
+        }
 
-        
-        
+        .modal-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            height: 30px;
+            background-color: #333;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            text-align: center;
+            line-height: 30px;
+            cursor: pointer;
+        }
 
-        
-        
+        .modal-close:hover {
+            background-color: #444;
+        }
+    </style>
 
-        
-        
+    <script>
+        // Função para abrir o modal de avaliação
+        function openModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "block";
+        }
 
-        
-        
-
-        
-        
-
-        
-        
-
-        
-        
-
-        
-        
-
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        
-        
-        
-
-Some additional sentences are
-
-.modal img {
-    width:auto; 
-    height:auto; 
-    max-width:auto; 
-    max-height:auto; 
-    margin-left:auto; 
-    margin-right:auto; 
-    display:block; 
-}
-
-.modal h2 {
-    color:#333; 
-    font-family:"Arial", sans-serif; 
-    font-size:"24px"; 
-    text-align:center; 
-}
-
-.modal p {
-    color:#666; 
-    font-family:"Arial", sans-serif; 
-    font-size:"16px"; 
-    text-align:center; 
-}
-
-.modal span {
-    display:inline-block; 
-    width:"20px"; 
-    height:"20px"; 
-    background-color:#ccc; 
-    border-radius:"50%"; 
-}
-
-.modal span.active {
-    background-color:#333; 
-}
-
-.modal textarea {
-    width:"80%"; 
-    height:"100px"; 
-    margin-left:"10%"; 
-    margin-right:"10%"; 
-    margin-top:"20px"; 
-    margin-bottom:"20px"; 
-}
-
-.modal button {
-    display:block; 
-    width:"40%"; 
-    height:"40px"; 
-    margin-left:"30%"; 
-    margin-right:"30%"; 
-    background-color:#333; 
-    color:#fff; 
-    font-family:"Arial", sans-serif; 
-    font-size:"18px"; 
-    border:none; 
-    border-radius:"10px"; 
-}
-
-.modal button:hover {
-    background-color:#444; 
-}
-
-.modal-close {
-    position:absolute; 
-    top:"10px"; 
-    right:"10px"; 
-    width:"30px"; 
-    height:"30px"; 
-    background-color:#333; 
-    color:#fff; 
-    font-family:"Arial", sans-serif; 
-    font-size:"24px"; 
-    text-align:center; 
-    line-height:"30px"; 
-    cursor:pointer; 
-}
-
-.modal-close:hover {
-    background-color:#444; 
-}
-
-<script>
-// Função para abrir o modal de avaliação
-function openModal(id) {
-  // Seleciona o elemento do modal pelo id
-  var modal = document.getElementById(id);
-  // Muda o estilo do modal para display:block
-  modal.style.display = "block";
-}
-
-// Função para fechar o modal de avaliação
-function closeModal(id) {
-  // Seleciona o elemento do modal pelo id
-  var modal = document.getElementById(id);
-  // Muda o estilo do modal para display:none
-  modal.style.display = "none";
-}
-</script>
+        // Função para fechar o modal de avaliação
+        function closeModal(id) {
+            var modal = document.getElementById(id);
+            modal.style.display = "none";
+        }
+    </script>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Looks Shein</h1>
-            <p>Saldo: R$0,00</p>
-        </div>
-        <div class="main">
-            
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
-                    <h2>Shorts Jeans Rasgado</h2>
-                    <p>R$49,90</p>
-                    <button onclick="openModal('modal1')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106" alt="Blusa Cropped Floral">
-                    <h2>Blusa Cropped Floral</h2>
-                    <p>R$29,90</p>
-                    <button onclick="openModal('modal2')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106" alt="Vestido Midi Estampado">
-                    <h2>Vestido Midi Estampado</h2>
-                    <p>R$69,90</p>
-                    <button onclick="openModal('modal3')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106" alt="Saia Plissada Xadrez">
-                    <h2>Saia Plissada Xadrez</h2>
-                    <p>R$59,90</p>
-                    <button onclick="openModal('modal4')">Avaliar</button>
-                </div>
-
-                
-            
-        </div>
-        
+        <!-- Seu conteúdo HTML aqui -->
     </div>
-
-    <!-- Modal de avaliação para a primeira roupa -->
-    <div id="modal1" class="modal">
-        <!-- Botão para fechar o modal -->
-        <span class="modal-close" onclick="closeModal('modal1')">×</span>
-
-        <!-- Conteúdo do modal -->
-        <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
-        <h2>Shorts Jeans Rasgado</h2>
-        <p>R$49,90</p>
-
-        <!-- Avaliação com estrelas -->
-        <p>Avalie este produto:</p>
-        <span id="star1" onclick="rate(1)"></span>
-        <span id="star2" onclick="rate(2)"></span>
-        <span id="star3" onclick="rate(3)"></span>
-        <span id="star4" onclick="rate(4)"></span>
-        <span id="star5" onclick="rate(5)"></span>
-
-        <!-- Comentário sobre o produto -->
-        <p>Deixe seu comentário:</p>
-        <textarea id="comment1" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
-
-        <!-- Botão para enviar a avaliação -->
-        <button id="submit1" onclick="submit(1)">Enviar</button>
-
-    </div>
-
-    <!-- Modal de avaliação para a segunda roupa -->
-    <div id="modal2" class="modal">
-        <!--
+</body>
+</html>
