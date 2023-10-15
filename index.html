@@ -1,300 +1,503 @@
 <html>
 <head>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .container {
-            width: 80%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+    }
 
-        .header {
-            background-color: #f0f0f0;
-            padding: 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    .container {
+      width: 80%;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-        .header h1 {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 36px;
-        }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background-color: #fff;
+    }
 
-        .header p {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-        }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
 
-        .main {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            margin-top: 20px;
-        }
+    .saldo {
+      font-size: 18px;
+      color: #333;
+    }
 
-        .card {
-            width: 30%;
-            background-color: #fff;
-            border: 1px solid #ccc;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            padding: 20px;
-        }
+    .main {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+    }
 
-        .card img {
-            width: 100%;
-            height: auto;
-        }
+    .card {
+      width: 30%;
+      min-width: 300px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
 
-        .card h2 {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            margin-top: 10px;
-        }
+    .card-image {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
 
-        .card p {
-            color: #666;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            margin-top: 10px;
-        }
+    .card-body {
+      padding: 10px;
+    }
 
-        .card button {
-            display: block;
-            width: 100%;
-            background-color: #333;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            border: none;
-            border-radius: 10px;
-            padding: 10px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+    }
 
-        .card button:hover {
-            background-color: #444;
-        }
+    .card-button {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 5px;
+      background-color: #333;
+      color: #fff;
+      cursor: pointer;
+    }
 
-        .modal {
-            display: none;
-            position: fixed;
-            background-color: #f0f0f0;
-            z-index: 1;
-            overflow: auto;
-            padding: 50px;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-        }
-
-        .modal img {
-            width: auto;
-            height: auto;
-            max-width: 100%;
-            margin: 0 auto;
-            display: block;
-        }
-
-        .modal h2 {
-            color: #333;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            text-align: center;
-        }
-
-        .modal p {
-            color: #666;
-            font-family: Arial, sans-serif;
-            font-size: 16px;
-            text-align: center;
-        }
-
-        .modal span {
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            background-color: #ccc;
-            border-radius: 50%;
-            margin: 0 5px;
-            cursor: pointer;
-        }
-
-        .modal span.active {
-            background-color: #333;
-        }
-
-        .modal textarea {
-            width: 80%;
-            height: 100px;
-            margin: 20px 10%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        .modal button {
-            width: 40%;
-            height: 40px;
-            margin: 20px 30%;
-            background-color: #333;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 18px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        .modal button:hover {
-            background-color: #444;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            font-size: 24px;
-            text-align: center;
-            line-height: 30px;
-            cursor: pointer;
-        }
-
-        .modal-close:hover {
-            background-color: #444;
-        }
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 1; 
+      left: 0; 
+      top: 0; 
+      width: 100%; 
+      height: 100%; 
+      overflow-y:auto; 
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     
+      
+     background-color:#f0f0f0; 
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+     opacity:.9; 
+     }
+    
+     .modal-content {
+       position:relative; 
+       background-color:#fff; 
+       margin:auto; 
+       padding:.5rem; 
+       border-radius:.5rem; 
+       width:auto; 
+       max-width:auto; 
+       height:auto; 
+       max-height:auto; 
+     }
+    
+     .close {
+       color:#aaa; 
+       float:right; 
+       font-size:.75rem; 
+       font-weight:bold; 
+     }
+    
+     .close:hover,
+     .close:focus {
+       color:#000; 
+       text-decoration:none; 
+       cursor:pointer; 
+     }
+    
+     .modal-image {
+       width:auto; 
+       height:auto; 
+       max-width:auto; 
+       max-height:auto; 
+     }
+    
+     .rating {
+       display:flex; 
+       align-items:center; 
+       justify-content:center; 
+       margin-top:.5rem; 
+     }
+    
+     .star {
+       width:.75rem; 
+       height:.75rem; 
+       margin:.25rem; 
+     }
+    
+     .star:hover,
+     .star.active {
+       filter:brightness(1.5);  
+     }
+    
+     .comment {
+       display:block; 
+       width:auto; 
+       height:auto;  
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+       
+        
+        
+         margin-top:.5rem
+         ; 
+        
+         padding:.5rem
+         ; 
+        
+         border:none
+         ; 
+        
+         border-radius:.25rem
+         ; 
+        
+         resize:none
+         ; 
+        
+         outline:none
+         ; 
+        
+         font-size:.75rem
+         ; 
+        
+         font-family:Arial, sans-serif
+         ; 
+        
+         color:#333
+         ; 
+        
+         background-color:#f0f0f0
+         ; 
+     }
+    
+     .submit {
+       display:block; 
+       width:auto; 
+       height:auto; 
+       margin-top:.5rem; 
+       padding:.5rem; 
+       border:none; 
+       border-radius:.25rem; 
+       background-color:#333; 
+       color:#fff; 
+       cursor:pointer; 
+     }
+    
+     .login {
+       display:flex; 
+       align-items:center; 
+       justify-content:center; 
+       height:100vh; 
+     }
+    
+     .login-form {
+       width:300px; 
+       height:200px; 
+       background-color:#fff; 
+       border-radius:10px; 
+       box-shadow:0 2px 4px rgba(0,0,0,0.1); 
+     }
+    
+     .login-title {
+       font-size:24px; 
+       font-weight:bold; 
+       color:#333; 
+       text-align:center; 
+       margin-top:20px; 
+     }
+    
+     .login-input {
+       display:block; 
+       width:80%; 
+       height:30px; 
+       margin:10px auto; 
+       border:none; 
+       border-bottom:1px solid #333; 
+       outline:none; 
+     }
+    
+     .login-button {
+       display:block; 
+       width:80%; 
+       height:40px; 
+       margin:10px auto; 
+       border:none; 
+       border-radius:5px; 
+       background-color:#333; 
+       color:#fff;
+        cursor:pointer;
+      }
     </style>
-
-    <script>
-        // Função para abrir o modal de avaliação
-        function openModal(id) {
-            var modal = document.getElementById(id);
-            modal.style.display = "block";
-        }
-
-        // Função para fechar o modal de avaliação
-        function closeModal(id) {
-            var modal = document.getElementById(id);
-            modal.style.display = "none";
-        }
-    </script>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>Looks Shein</h1>
-            <p>Saldo: R$0,00</p>
+      <div class="header">
+        <div class="logo">Looks da Shein</div>
+        <div class="saldo">Saldo: R$ 0,00</div>
+      </div>
+      <div class="main">
+        <div class="card" id="card1">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal1')">Avaliar</button>
+          </div>
         </div>
-        <div class="main">
-            
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
-                    <h2>Shorts Jeans Rasgado</h2>
-                    <p>R$49,90</p>
-                    <button onclick="openModal('modal1')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/top/210419-top-1618919106" alt="Blusa Cropped Floral">
-                    <h2>Blusa Cropped Floral</h2>
-                    <p>R$29,90</p>
-                    <button onclick="openModal('modal2')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/dress/210419-dress-1618919106" alt="Vestido Midi Estampado">
-                    <h2>Vestido Midi Estampado</h2>
-                    <p>R$69,90</p>
-                    <button onclick="openModal('modal3')">Avaliar</button>
-                </div>
-
-                <div class="card">
-                    <img src="https://br.shein.com/pimages/skirt/210419-skirt-1618919106" alt="Saia Plissada Xadrez">
-                    <h2>Saia Plissada Xadrez</h2>
-                    <p>R$59,90</p>
-                    <button onclick="openModal('modal4')">Avaliar</button>
-                </div>
+        <div class="card" id="card2">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal2')">Avaliar</button>
+          </div>
         </div>
+        <div class="card" id="card3">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal3')">Avaliar</button>
+          </div>
+        </div>
+        <div class="card" id="card4">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal4')">Avaliar</button>
+          </div>
+        </div>
+        <div class="card"id="card5">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal5')">Avaliar</button>
+          </div>
+        </div>
+        <div class="card" id="card6">
+          <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="card-image">
+          <div class="card-body">
+            <div class="card-title">Vestido floral</div>
+            <button class="card-button" onclick="openModal('modal6')">Avaliar</button>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Modal de avaliação para a primeira roupa -->
+    <!-- Modal 1 -->
     <div id="modal1" class="modal">
-        <!-- Botão para fechar o modal -->
-        
-    <!-- Conteúdo do modal -->
-    <img src="https://br.shein.com/pimages/shorts/210419-shorts-1618919106" alt="Shorts Jeans Rasgado">
-    <h2>Shorts Jeans Rasgado</h2>
-    <p>R$49,90</p>
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('modal1')">×</span>
+        <img src="https://img.ltwebstatic.com/images3_pi/2021/03/29/1616996892b3c9a8d6a7c4b9d7c6b9e6a7e8c3a8f9_thumbnail_600x.webp" alt="Vestido floral" class="modal-image">
+        <div class="rating">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Plain_Yellow_Star.svg/1200px-Plain_Yellow_Star.svg.png" alt="Estrela 1" class="star" id="star11" onclick="rate('star11')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1200px-Empty_Star.svg.png" alt="Estrela 2" class="star" id="star12" onclick="rate('star12')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1200px-Empty_Star.svg.png" alt="Estrela 3" class="star" id="star13" onclick="rate('star13')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1200px-Empty_Star.svg.png" alt="Estrela 4" class="star" id="star14" onclick="rate('star14')">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Empty_Star.svg/1200px-Empty_Star.svg.png" alt="Estrela 5" class="star" id="star15" onclick="rate('star15')">
+        </div>
+        <textarea class="comment" id="comment1" placeholder="Escreva um comentário sobre a roupa"></textarea>
+        <button class="submit" id ="submit1" onclick ="submit('submit1')">Enviar</button>
+      </div>
+    </div>
 
-    <!-- Avaliação com estrelas -->
-    <p>Avalie este produto:</p>
-    <span class="star" onclick="rate(1)"></span>
-    <span class="star" onclick="rate(2)"></span>
-    <span class="star" onclick="rate(3)"></span>
-    <span class="star" onclick="rate(4)"></span>
-    <span class="star" onclick="rate(5)"></span>
-
-    <!-- Comentário sobre o produto -->
-    <p>Deixe seu comentário:</p>
-    <textarea id="comment1" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
-
-    <!-- Botão para enviar a avaliação -->
-    <button id="submit1" onclick="submit(1)">Enviar</button>
-</div>
-
-<!-- Modal de avaliação para a segunda roupa -->
-<div id="modal2" class="modal">
-    <!-- Botão para fechar o modal -->
-    <span class="modal-close" onclick="closeModal('modal2')">✖</span>
-
-    <!-- Conteúdo do modal -->
-    <img src="https://br.shein.com/pimages/top/210419-top-1618919106.jpg" alt="Blusa Cropped Floral">
-    <h2>Blusa Cropped Floral</h2>
-    <p>R$29,90</p>
-
-    <!-- Avaliação com estrelas -->
-    <p>Avalie este produto:</p>
-    <span class="star" onclick="rate(1)"></span>
-    <span class="star" onclick="rate(2)"></span>
-    <span class="star" onclick="rate(3)"></span>
-    <span class="star" onclick="rate(4)"></span>
-    <span class="star" onclick="rate(5)"></span>
-
-    <!-- Comentário sobre o produto -->
-    <p>Deixe seu comentário:</p>
-    <textarea id="comment2" placeholder="Escreva aqui sua opinião sobre o produto"></textarea>
-
-    <!-- Botão para enviar a avaliação -->
-    <button id="submit2" onclick="submit(2)">Enviar</button>
-</div>
-
-<script>
-    // Funções JavaScript para avaliação
-    function rate(stars) {
-        // Lógica para avaliação
-    }
-
-    function submit(modalId) {
-        // Lógica para enviar a avaliação
-    }
-</script>
-
-</body>
-</html>
+    <!-- Modal 2 -->
+    <div id ="modal2"class ="modal">
+      <div class ="modal-content">
+        <span class ="close"
